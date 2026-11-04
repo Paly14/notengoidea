@@ -1,23 +1,33 @@
-# No tengo idea
+# Closer OS — Herramienta de ejecución comercial
 
-Base inicial de una página web en español, adaptable a celulares y sin dependencias externas.
+Aplicación web para ventas consultivas, con guion y salidas dinámicas según el prospecto.
 
-## Desarrollo
+## Funciones
+- Panel con métricas reales del registro de prospectos y seguimiento.
+- Prospectos con fichas, estado comercial y notas.
+- Guion de primera llamada: 9 etapas, preguntas, salidas condicionales, notas y recapitulación.
+- Biblioteca de objeciones y respuestas consultivas.
+- Entrenamiento con práctica manual de roleplays.
+- Seguimientos por fecha.
+- Exportación CSV y copia de seguridad / restauración JSON.
 
-Requiere Python 3. Desde la carpeta del repositorio:
+## Cómo usar
+Abrí `index.html` en un navegador. Si querés, podés iniciar un servidor local:
+`python3 -m http.server 8000`
+y luego abrir http://localhost:8000.
 
-```sh
-python3 -m http.server 8000 --bind 127.0.0.1
-```
+## Publicar en la web
+Podés subir estos archivos a GitHub y desplegarlos gratis en Vercel, Netlify o GitHub Pages como sitio estático.
 
-El archivo `index.html` contiene la página y sus estilos. Los cambios se ven al recargar el navegador.
+## Limitaciones
+Los datos se guardan localmente en el navegador usando `localStorage`. No hay cuentas, sincronización entre dispositivos, base de datos en la nube ni inteligencia artificial en tiempo real. Para un equipo comercial con varios usuarios, añadí autenticación, base de datos segura y permisos.
 
-## Verificación
+Exportá copias JSON con regularidad. Evitá almacenar información personal sensible sin necesidad y gestioná el consentimiento de tus prospectos.
 
-Con el servidor en ejecución:
+## Despliegue en Vercel
 
-```sh
-curl --fail http://127.0.0.1:8000/
-```
+Importá `Paly14/notengoidea` desde https://vercel.com/new e indicá la rama `main`.
+La configuración `vercel.json` sirve este proyecto como sitio estático desde la raíz,
+sin instalación de dependencias ni compilación. No requiere variables de entorno.
 
-La respuesta debe incluir el título `No tengo idea`. No hay compilación ni suite de pruebas automatizadas.
+La publicación no sincroniza los datos: cada navegador conserva su propio registro.
